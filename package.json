@@ -9,6 +9,7 @@
     "build": "webpack --mode=production",
     "test": "jest"
   },
+  "main": "dist/server.js",
   "devDependencies": {
     "@babel/core": "7.4.5",
     "@babel/plugin-proposal-class-properties": "7.4.4",
