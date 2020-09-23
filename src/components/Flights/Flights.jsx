@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   loader: {
     alignSelf: 'center',
+    justifySelf: 'center'
   },
   paper: {
     padding: theme.spacing(2),
