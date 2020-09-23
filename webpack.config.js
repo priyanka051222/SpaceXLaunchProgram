@@ -9,7 +9,7 @@ module.exports = [
     entry: ["@babel/polyfill", "./src/server.js"],
     output: {
       path: path.join(__dirname, "dist"),
-      filename: "server.js",
+      filename: "index.js",
       libraryTarget: "commonjs2",
       publicPath: "/"
     },
