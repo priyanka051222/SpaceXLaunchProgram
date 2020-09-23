@@ -89,11 +89,11 @@ const Sidebar = (props) => {
                 variant='body2'
                 style={{ background: item === year ? "green" : "#DAF7A6" }}
                 onClick={() => {
-                  setYear(item);
+                  setYear(ye);
                   props.filterOnLaunchYear(item);
                   let searchParams = new URLSearchParams(location.search);
                   // returns the existing query string: '?type=fiction&author=fahid'
-                  if (item) searchParams.set("launch_year", item);
+                  if (year) searchParams.set("launch_year", year);
                   if (launchSuccess)
                     searchParams.set("launch_success", launchSuccess);
                   if (landSuccess)
