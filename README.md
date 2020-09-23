@@ -8,8 +8,8 @@ npm run build
  
 npm run start
 
-http://localhost:8080/
+http://localhost:5000/
 
 # Deployment url
 
-https://flights-app.vercel.app/
+https://spacexlaunchprogram31.herokuapp.com/
