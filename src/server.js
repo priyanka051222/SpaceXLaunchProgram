@@ -43,8 +43,8 @@ server.get("/", async (req, res) => {
   );
 });
 
-server.listen(8080);
+server.listen(process.env.PORT || 5000)
 
 /* eslint-disable no-console */
-console.log("listening on 8080");
+console.log("listening on 5000");
 /* eslint-enable no-console */
