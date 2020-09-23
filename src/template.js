@@ -9,7 +9,7 @@ export default ({ body, title, initialState, finalState}) =>
         <title>${title}</title>
       </head>
       
-      <body>
+      <body style="margin: 0;">
         <div id="root">${body}</div>
       </body> 
       <script>

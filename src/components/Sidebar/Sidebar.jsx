@@ -16,6 +16,9 @@ const useStyles = makeStyles({
     flexDirection: "column",
     alignItems: "center",
   },
+  buttonPanel: {
+    display: "flex",
+  },
   button: {
     width: 66,
     height: 45,
@@ -76,12 +79,12 @@ const Sidebar = (props) => {
     <div className={classes.sidebar}>
       <h2> Filters</h2>
       Launch Year
-      <Grid container xs={12} sm={12}>
+      <Grid container xs={12} sm={12} justify="center" className={classes.buttonPanel}>
         {years.map((item) => {
           return (
-            <Grid item xs={6}>
+            <Grid item xs={6} justify="center" className={classes.buttonPanel}>
               <Link
-              component="button"
+                component="button"
                 className={classes.button}
                 variant='body2'
                 style={{ background: item === year ? "green" : "#DAF7A6" }}
@@ -109,10 +112,10 @@ const Sidebar = (props) => {
         })}
       </Grid>
       Successful Launch
-      <Grid container xs={12} sm={12}>
+      <Grid container xs={12} sm={12} justify="center" className={classes.buttonPanel}>
         {values.map((value) => {
           return (
-            <Grid item xs={6}>
+            <Grid item xs={6} className={classes.buttonPanel}>
               <Link
                 component="button"
                 className={classes.button}
@@ -146,10 +149,10 @@ const Sidebar = (props) => {
         })}
       </Grid>
       Successful Land
-      <Grid container xs={12} sm={12}>
+      <Grid container xs={12} sm={12} justify="center" className={classes.buttonPanel}>
         {values.map((value) => {
           return (
-            <Grid item xs={6}>
+            <Grid item xs={6} className={classes.buttonPanel}>
               <Link
                 component="button"
                 className={classes.button}

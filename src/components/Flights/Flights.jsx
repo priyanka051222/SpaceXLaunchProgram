@@ -1,18 +1,24 @@
 import React, { useEffect } from "react";
 
 import Grid from "@material-ui/core/Grid";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import { getData } from "../../actions/index";
 import FlightCard from "./FlightCard/FlightCard";
 import { Flight } from "../../models/Flight";
-import {useRouteMatch} from "react-router-dom";
 import { useLocation } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    justifyContent: 'center',
+    display: 'flex',
+    height: '100%'
+  },
+  loader: {
+    alignSelf: 'center',
   },
   paper: {
     padding: theme.spacing(2),
@@ -56,11 +62,12 @@ const ConnectedList = ({ remoteFlights, getData, filters }) => {
 
   return (
     <div className={classes.root}>
-      <Grid container xs={12} justify="space-around">
+      {remoteFlights.length === 0 && <CircularProgress className={classes.loader}/> }
+      <Grid container xs={12} spacing={2}>
         {remoteFlights &&
           remoteFlights.length > 0 &&
           remoteFlights.map((el) => (
-            <Grid item xs={6} md={4}>
+            <Grid item xs={6} md={3}>
               <FlightCard className={classes.paper} flightItem={Flight(el)} />
             </Grid>
           ))}

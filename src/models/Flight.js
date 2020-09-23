@@ -1,10 +1,10 @@
 export const Flight = (flight) => {
   return {
-    title: flight.mission_name,
-    year: flight.launch_year,
-    launchSuccess: flight.launch_success,
-    id: flight.mission_id,
-    landSuccess: flight.land_success,
-    photo: flight.links.mission_patch,
+    title: flight.mission_name || 'NotFound',
+    year: flight.launch_year || 'NotFound',
+    launchSuccess: flight.launch_success || 'NotFound',
+    id: flight.mission_id || 'NotFound',
+    landSuccess: flight.land_success || 'NotFound',
+    photo: flight.links.mission_patch || 'NotFound',
   };
 };
