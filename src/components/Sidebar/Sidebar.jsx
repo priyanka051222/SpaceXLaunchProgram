@@ -79,29 +79,35 @@ const Sidebar = (props) => {
     <div className={classes.sidebar}>
       <h2> Filters</h2>
       Launch Year
-      <Grid container xs={12} sm={12} justify="center" className={classes.buttonPanel}>
+      <Grid
+        container
+        xs={12}
+        sm={12}
+        justify='center'
+        className={classes.buttonPanel}
+      >
         {years.map((item) => {
           return (
-            <Grid item xs={6} justify="center" className={classes.buttonPanel}>
+            <Grid item xs={6} justify='center' className={classes.buttonPanel}>
               <Link
-                component="button"
+                component='button'
                 className={classes.button}
                 variant='body2'
                 style={{ background: item === year ? "green" : "#DAF7A6" }}
                 onClick={() => {
-                  setYear(ye);
+                  setYear(year);
                   props.filterOnLaunchYear(item);
                   let searchParams = new URLSearchParams(location.search);
                   // returns the existing query string: '?type=fiction&author=fahid'
-                  if (year) searchParams.set("launch_year", year);
+                  if (item) searchParams.set("launch_year", item);
                   if (launchSuccess)
                     searchParams.set("launch_success", launchSuccess);
                   if (landSuccess)
                     searchParams.set("land_success", landSuccess);
-                  setSP(searchParams);
+                  setSP(searchParams.toString());
                   history.push({
                     pathname: url,
-                    search: `?${searchParams}`,
+                    search: `?${SP}`,
                   });
                 }}
               >
@@ -112,12 +118,18 @@ const Sidebar = (props) => {
         })}
       </Grid>
       Successful Launch
-      <Grid container xs={12} sm={12} justify="center" className={classes.buttonPanel}>
+      <Grid
+        container
+        xs={12}
+        sm={12}
+        justify='center'
+        className={classes.buttonPanel}
+      >
         {values.map((value) => {
           return (
             <Grid item xs={6} className={classes.buttonPanel}>
               <Link
-                component="button"
+                component='button'
                 className={classes.button}
                 style={{
                   background:
@@ -134,12 +146,11 @@ const Sidebar = (props) => {
                   if (year) searchParams.set("launch_year", year);
                   if (landSuccess)
                     searchParams.set("land_success", landSuccess);
-                  setSP(searchParams);
+                  setSP(searchParams.toString());
                   history.push({
                     pathname: url,
-                    search: `?${searchParams}`,
+                    search: `?${SP}`,
                   });
-                  history.replace(location)
                 }}
               >
                 {value.label}
@@ -149,12 +160,18 @@ const Sidebar = (props) => {
         })}
       </Grid>
       Successful Land
-      <Grid container xs={12} sm={12} justify="center" className={classes.buttonPanel}>
+      <Grid
+        container
+        xs={12}
+        sm={12}
+        justify='center'
+        className={classes.buttonPanel}
+      >
         {values.map((value) => {
           return (
             <Grid item xs={6} className={classes.buttonPanel}>
               <Link
-                component="button"
+                component='button'
                 className={classes.button}
                 style={{
                   background: value.value === landSuccess ? "green" : "#DAF7A6",
@@ -167,13 +184,13 @@ const Sidebar = (props) => {
                   // returns the existing query string: '?type=fiction&author=fahid'
                   searchParams.set("land_success", value.value);
 
-                  if (item) searchParams.set("launch_year", item);
+                  if (year) searchParams.set("launch_year", year);
                   if (launchSuccess)
                     searchParams.set("launch_success", launchSuccess);
-                  setSP(searchParams);
+                  setSP(searchParams.toString());
                   history.push({
                     pathname: url,
-                    search: `?${searchParams}`,
+                    search: `?${SP}`,
                   });
                 }}
               >
