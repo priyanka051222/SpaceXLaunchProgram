@@ -4,11 +4,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start:dev": "webpack && nodemon dist/server.js",
+    "start": "webpack && nodemon dist/server.js",
     "watch": "webpack --watch",
     "build": "webpack --mode=production",
-    "test": "jest",
-    "start": "node dist/server.js"
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "7.4.5",
