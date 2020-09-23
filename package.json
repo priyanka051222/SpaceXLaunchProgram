@@ -4,11 +4,11 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start:dist": "webpack && nodemon dist/server.js",
     "watch": "webpack --watch",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=development",
     "test": "jest",
-    "start": "npm install && npm run build && node dist/server.js",
+    "start": "webpack && node dist/server.js",
+    "heroku-prebuild": "npm install --dev",
     "heroku-postbuild": "npm install && npm run build"
   },
   "devDependencies": {
