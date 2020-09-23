@@ -15,7 +15,7 @@ function App() {
       <h1> SpaceX Launch Program </h1>
       <Router history={history}>
         <Grid container xs={12} sm={12}>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={4}>
             <Sidebar />
           </Grid>
           <Grid item xs={12} sm={9}>
